@@ -28,6 +28,9 @@ function createSymbolProperty(property) {
     // Додамо властивість до об'єкту, ключем якої буде наш символ, а значенням буде аргумент property
     // Повертаємо об'єкт
     let sym = Symbol();
+    let obj = {};
+    obj[sym] = property;
+    return obj;
 }
 
 console.log("Завдання 3 ====================================");
@@ -90,7 +93,7 @@ function useSymbolToStringTag() {
     // Встановлюємо властивість Symbol об'єкту myObject на значення "CustomObject".
     // Повертаємо рядкове представлення myObject[Symbol].
     let myObject = Object();
-    //??????
+    myObject[Symbol] = "CustomObject";
     return myObject[Symbol];
 }
 
